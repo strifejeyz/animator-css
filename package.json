@@ -1,6 +1,6 @@
 {
   "name": "animator-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small footprint css for animating elements using classes.",
   "main": "animator.css",
   "scripts": {},
