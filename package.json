@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "description": "A small footprint css for animating elements using classes.",
   "main": "animator.css",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "animator-css",
     "animations"
   ],
   "author": "Jesse Strife",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strifejeyz/animator-css.git"
   },
-  "devDependencies": {
-  }
+  "bugs": {
+    "url": "https://github.com/strifejeyz/animator-css/issues"
+  },
+  "homepage": "https://github.com/strifejeyz/animator-css#readme"
 }

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample</title>
+    <link rel="stylesheet" href="animator.css">
+
+    <style>
+        .inline {
+            display: flex;
+            margin: auto;
+            width: 400px
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background: red;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="inline">
+    <div class="selector">
+        <label for="animate">Choose Animation</label><br>
+        <select id="animate">
+            <option>animate-moveToLeft</option>
+            <option>animate-moveFromLeft</option>
+            <option>animate-moveToRight</option>
+            <option>animate-moveFromRight</option>
+            <option>animate-moveToTop</option>
+            <option>animate-moveFromTop</option>
+            <option>animate-moveToBottom</option>
+            <option>animate-moveFromBottom</option>
+            <option>animate-fade</option>
+            <option>animate-fade-in</option>
+            <option>animate-fade-out</option>
+            <option>animate-moveToLeftFade</option>
+            <option>animate-moveFromLeftFade</option>
+            <option>animate-moveToRightFade</option>
+            <option>animate-moveFromRightFade</option>
+            <option>animate-moveToTopFade</option>
+            <option>animate-moveFromTopFade</option>
+            <option>animate-moveToBottomFade</option>
+            <option>animate-moveFromBottomFade</option>
+            <option>animate-moveToLeftEasing</option>
+            <option>animate-moveToRightEasing</option>
+            <option>animate-moveToTopEasing</option>
+            <option>animate-moveToBottomEasing</option>
+            <option>animate-scaleDown</option>
+            <option>animate-scaleUp</option>
+            <option>animate-scaleUpDown</option>
+            <option>animate-scaleDownUp</option>
+            <option>animate-scaleDownCenter</option>
+            <option>animate-scaleUpCenter</option>
+            <option>animate-rotateRightSideFirst</option>
+            <option>animate-rotateLeftSideFirst</option>
+            <option>animate-rotateTopSideFirst</option>
+            <option>animate-rotateBottomSideFirst</option>
+            <option>animate-flipOutRight</option>
+            <option>animate-flipInLeft</option>
+            <option>animate-flipOutLeft</option>
+            <option>animate-flipInRight</option>
+            <option>animate-flipOutTop</option>
+            <option>animate-flipInBottom</option>
+            <option>animate-flipOutBottom</option>
+            <option>animate-flipInTop</option>
+            <option>animate-rotateFall</option>
+            <option>animate-rotateOutNewspaper</option>
+            <option>animate-rotateInNewspaper</option>
+            <option>animate-rotatePushLeft</option>
+            <option>animate-rotatePushRight</option>
+            <option>animate-rotatePushTop</option>
+            <option>animate-rotatePushBottom</option>
+            <option>animate-rotatePullRight</option>
+            <option>animate-rotatePullLeft</option>
+            <option>animate-rotatePullTop</option>
+            <option>animate-rotatePullBottom</option>
+            <option>animate-rotateFoldRight</option>
+            <option>animate-rotateFoldLeft</option>
+            <option>animate-rotateFoldTop</option>
+            <option>animate-rotateFoldBottom</option>
+            <option>animate-rotateUnfoldLeft</option>
+            <option>animate-rotateUnfoldRight</option>
+            <option>animate-rotateUnfoldTop</option>
+            <option>animate-rotateUnfoldBottom</option>
+            <option>animate-rotateRoomLeftOut</option>
+            <option>animate-rotateRoomLeftIn</option>
+            <option>animate-rotateRoomRightOut</option>
+            <option>animate-rotateRoomRightIn</option>
+            <option>animate-rotateRoomTopOut</option>
+            <option>animate-rotateRoomTopIn</option>
+            <option>animate-rotateRoomBottomOut</option>
+            <option>animate-rotateRoomBottomIn</option>
+            <option>animate-rotateCubeLeftOut</option>
+            <option>animate-rotateCubeLeftIn</option>
+            <option>animate-rotateCubeRightOut</option>
+            <option>animate-rotateCubeRightIn</option>
+            <option>animate-rotateCubeTopOut</option>
+            <option>animate-rotateCubeTopIn</option>
+            <option>animate-rotateCubeBottomOut</option>
+            <option>animate-rotateCubeBottomIn</option>
+            <option>animate-rotateCarouselLeftOut</option>
+            <option>animate-rotateCarouselLeftIn</option>
+            <option>animate-rotateCarouselRightOut</option>
+            <option>animate-rotateCarouselRightIn</option>
+            <option>animate-rotateCarouselTopOut</option>
+            <option>animate-rotateCarouselTopIn</option>
+            <option>animate-rotateCarouselBottomOut</option>
+            <option>animate-rotateCarouselBottomIn</option>
+            <option>animate-rotateSidesOut</option>
+            <option>animate-rotateSidesIn</option>
+            <option>animate-rotateSlideOut</option>
+            <option>animate-rotateSlideIn</option>
+        </select>
+    </div>
+    <div style="width: 50px"></div>
+    <div class="selector">
+        <label for="delay">Choose Delay</label> <br>
+        <select id="delay">
+            <option>animate-delay100</option>
+            <option>animate-delay180</option>
+            <option>animate-delay200</option>
+            <option>animate-delay300</option>
+            <option>animate-delay400</option>
+            <option>animate-delay500</option>
+            <option>animate-delay700</option>
+            <option>animate-delay1000</option>
+        </select>
+    </div>
+</div>
+
+<div class="box"></div>
+
+<script>
+    const animation = document.getElementById('animate');
+    const delay = document.getElementById('delay');
+
+    const box = document.querySelector('.box');
+    animation.addEventListener('change', (event) => {
+        box.classList.add(event.target.value)
+        box.classList.add(delay.value)
+
+        setTimeout(() => {
+            box.classList.remove(event.target.value);
+            box.classList.remove(delay.value)
+        },1500)
+    });
+</script>
+
+</body>
+</html>
